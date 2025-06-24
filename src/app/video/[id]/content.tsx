@@ -1,22 +1,23 @@
 "use client";
 
 import ReactPlayer from "react-player/lazy";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeftIcon, PlayCircleIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { Video } from "@/app/videos";
 
-export default function Content({ video }: { video: any }) {
+export default function Content({ video }: { video?: Video }) {
   const [isClient, setIsClient] = useState(false);
-//   const [setIsReady] = useState(false);
+  //   const [setIsReady] = useState(false);
   const [hideImage, setHideImage] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   useEffect(() => {
     setIsClient(true);
   }, []);
   const router = useRouter();
-  return (
+  return video ? (
     <>
       <div className="container max-w-5xl mx-auto pt-16">
         <Button variant="outline" asChild className="mb-4">
@@ -65,5 +66,5 @@ export default function Content({ video }: { video: any }) {
         </div>
       </div>
     </>
-  );
+  ) : null;
 }

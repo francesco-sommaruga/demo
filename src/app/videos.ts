@@ -1,7 +1,17 @@
+import { StaticImageData } from "next/image";
 import img1 from "../../public/video-1.jpg";
 import img2 from "../../public/video-2.jpg";
 
-export const videos = [
+export type Videos = Video[];
+export interface Video {
+  id: number;
+  title: string;
+  description: string;
+  url: string;
+  image: StaticImageData;
+}
+
+export const videos: Videos = [
   {
     id: 1,
     title: "Video 1",
