@@ -1,4 +1,4 @@
-import { videos } from "../../page";
+import { videos } from "../../videos";
 import Content from "./content";
 
 export default async function VideoPage({
