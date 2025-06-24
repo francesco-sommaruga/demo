@@ -3,19 +3,13 @@
 import ReactPlayer from "react-player/lazy";
 import { Suspense, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import {
-  ArrowLeftIcon,
-  PlayCircleIcon,
-  PlaySquare,
-  PlaySquareIcon,
-} from "lucide-react";
+import { ArrowLeftIcon, PlayCircleIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function Content({ video }: { video: any }) {
   const [isClient, setIsClient] = useState(false);
-  const [isReady, setIsReady] = useState(false);
+//   const [setIsReady] = useState(false);
   const [hideImage, setHideImage] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   useEffect(() => {
@@ -57,7 +51,7 @@ export default function Content({ video }: { video: any }) {
                 width="100%"
                 height="100%"
                 controls
-                onReady={() => setIsReady(true)}
+                // onReady={() => setIsReady(true)}
                 playing={isPlaying}
                 onPause={() => setIsPlaying(false)}
                 onPlay={() => setIsPlaying(true)}
